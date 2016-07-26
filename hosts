@@ -1,0 +1,5 @@
+[webservers]
+node1 ansible_port=7963 ansible_host=node1.tianyublog.com
+
+#node1 ansible_port=7963 ansible_host=192.168.0.192
+#node2 ansible_port=7963 ansible_host=192.168.0.193

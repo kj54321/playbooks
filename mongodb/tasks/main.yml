@@ -1,0 +1,17 @@
+# 16/07/26 TD:Inital Release
+---
+- name: add Mongodb Offical repo 
+  template: src=repo.j2 dest=/etc/yum.repos.d/mongodb.repo 
+  tags: mongodb
+
+- name: install mongodb
+  yum: name=mongodb-org-server state=present
+  tags: mongodb
+
+- name: configure mongodb
+  template: src=mongod.conf.j2 dest=/etc/mongod.conf
+  tags: mongodb
+
+- name: run mongodb
+  service: name=mongod state=started enabled=yes
+  tags: mongodb
